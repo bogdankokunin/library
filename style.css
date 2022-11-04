@@ -8,13 +8,11 @@ header {
 }
 
 main {
-    height: 80vh;
+    height: auto;
     border: 5px solid gray;
     margin: 0px 15px 0px 15px;
     padding: 45px 45px 45px 45px;
     display: flex;
-    flex-flow: row;
-
     gap: 40px;
 }
 
@@ -63,12 +61,18 @@ footer {
     font-size: 3rem;
 }
 
+.pagesDiv {
+    width: 155px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
 .buttonsDiv {
     display: flex;
     flex-direction: row;
     gap: 20px;
-
-    
+    justify-self: flex-start;    
 }
 
 .bookButton {
@@ -92,13 +96,20 @@ form {
 
 input {
     width: 150px;
+    height: 30px;
     text-align: center;
+
+    border: 3px solid rgb(185, 185, 185);
+    border-radius: 10px;
 }
 
 input[type='number'] {
-    width: 45px;
+    width: 90px;
 }
 
 .submitBtn {
-    width: 100px
+    width: 150px;
+    font-size: 1rem;
+    background-color: white;
+    border: none;
 }

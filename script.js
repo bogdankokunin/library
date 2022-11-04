@@ -15,17 +15,20 @@ function createForm() {
     const submitBtn = document.createElement('button');
 
     addBtn.addEventListener('click', (event) => {
-        submitBtn.innerText = 'Add book';
-        
         form.setAttribute('action', 'post')
         form.setAttribute('class', 'form');
         authorInput.setAttribute('type', 'text');
         titleInput.setAttribute('type', 'text');
         pagesInput.setAttribute('type', 'number');
+        pagesInput.setAttribute('id', 'pagesInput');
     
         authorInput.setAttribute('placeholder', 'Author');
         titleInput.setAttribute('placeholder', 'Title');
-    
+        pagesInput.setAttribute('placeholder', 'Pages');
+
+        submitBtn.classList.add('submitBtn');
+        submitBtn.innerText = '✔️';
+
         library.insertBefore(form, addBtnDiv);
         form.appendChild(authorInput);
         form.appendChild(titleInput);
@@ -89,10 +92,10 @@ function createBook(item) {
     removeBtn.classList.add('bookButton');
     readBtn.classList.add('bookButton');
 
-    titleDiv.textContent = item.title;
+    titleDiv.textContent = `«${item.title}»`;
     cardDiv.appendChild(titleDiv);
 
-    authorDiv.textContent = `Author: ${item.author}`;
+    authorDiv.textContent = `by ${item.author}`;
     cardDiv.appendChild(authorDiv);
 
     pagesDiv.textContent = `Pages: ${item.pages}`;
